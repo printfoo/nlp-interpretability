@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+body {
+	background: #FFFFFF;
+};
+
 header {
 	display: none;
 };
@@ -13,4 +17,12 @@ footer {
 
 a {
 	color: #3C5A99;
+};
+
+.inner {
+	max-width: 720px;
+}
+
+#main_content_wrap {
+	background: #FFFFFF;
 };
