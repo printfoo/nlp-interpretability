@@ -1,8 +1,9 @@
 # Interpretable NLP
+*Last update: 01/30/2020*
 
 This [repo](https://github.com/printfoo/interpretable-nlp) contains a list of NLP and ML papers on interpretability, explainability, rationalization, etc., and my notes.
 
-## Normative questions.
+## 0. Normative questions.
 
 What is interpretability?
 
@@ -10,9 +11,9 @@ What is interpretability?
 
 [Towards a Rigorous Science of Interpretable Machine Learning](https://arxiv.org/pdf/1702.08608.pdf)
 
-## Models with built-in interpretability.
+## 1. Models with built-in interpretability.
 
-### Attention mechanism.
+### 1.1. Attention mechanism.
 
 [Attention is not Explanation](https://arxiv.org/pdf/1902.10186.pdf)
 
@@ -22,10 +23,10 @@ What is interpretability?
 
 [Attention Interpretability across NLP Tasks](https://arxiv.org/pdf/1909.11218.pdf)
 
-### Hard attention mechanism.
+### 1.2. Hard attention mechanism.
 
 [Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf)
 
-## Rationale-supervised learning.
+## 2. Rationale-supervised learning.
 
 [ERASER: A Benchmark to Evaluate Rationalized NLP Models](https://arxiv.org/abs/1911.03429)
