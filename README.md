@@ -1,8 +1,6 @@
 # Interpretable NLP
 
-This [repo](https://github.com/printfoo/interpretable-nlp) contains a list of papers on the interpretability, explainability, rationalization, etc. of NLP models, and my notes.
-
-Note that this is not a comprehensive survey of this area, but only papers of my ad-hoc choice.
+This [repo](https://github.com/printfoo/interpretable-nlp) contains a list of NLP and ML papers on interpretability, explainability, rationalization, etc., and my notes.
 
 ## Normative questions.
 
