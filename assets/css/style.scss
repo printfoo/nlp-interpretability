@@ -19,10 +19,30 @@ a {
 	color: #3C5A99;
 };
 
+h2 {
+	font-size: 24px;
+};
+
+h3 {
+        font-size: 21px;
+};
+
+h4 {
+        font-size: 18px;
+};
+
 .inner {
 	max-width: 720px;
-}
+};
 
 #main_content_wrap {
 	background: #FFFFFF;
+};
+
+#header_wrap {
+	display: none;
+};
+
+#footer_wrap {
+        display: none;
 };
