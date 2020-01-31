@@ -7,15 +7,15 @@ This note briefly goes through some recent papers on NLP interpretability.
 
 What is interpretability?
 
-[The Mythos of Model Interpretability](http://www.zacklipton.com/media/papers/mythos_model_interpretability_lipton2016.pdf) (Zachary C. Lipton, 2016) offered a taxonomy for this question. It started by introducing some potential benefits of interpretability such as increasing trust and enabling fair and ethical decision-making. Then, it divide the properties of interpretable models into two categories.
+[The Mythos of Model Interpretability](http://www.zacklipton.com/media/papers/mythos_model_interpretability_lipton2016.pdf) (Zachary C. Lipton, 2016) offered a taxonomy for this question. It started by introducing some potential benefits of interpretability such as increasing trust and enabling fair and ethical decision-making. Then, it divides the properties of interpretable models into two categories.
 
-*Transparency*, or *how does the model work*, the opposite of *opacity* or *black-box-ness*, is the 1st category. It can be considered at three levels:s
-- *Simulatability*
-- *Decomposability*
-- *Algorithmic transparency*
+***Transparency***, or *how does the model work*, the opposite of *opacity* or *black-box-ness*, is the 1st category. It can be considered at three levels:
+- At the level of the entire model, *simulatability*
+- At the level of individual components, *decomposability*, or *intelligibility*
+- At the level of the training algorithm, *algorithmic transparency*
 
-*(post-hoc) Explanation*, or *what else can the model tell me*, is the 2nd category. It asks for useful information without peeking beneth the interworking of the model. Some common approaches to post-hoc explanation include:
-- *Text explanation* These explanations sometimes called *rationales* in NLP research.
+*(post-hoc) **Explanation***, or *what else can the model tell me*, is the 2nd category. It asks for useful information without peeking beneath the interworking of the model. Some common approaches to post-hoc explanation include:
+- *Text explanation* These explanations sometimes called ***rationales*** in NLP research.
 - *Visualization*
 - *Local explanation*
 - *Explanation by example*
