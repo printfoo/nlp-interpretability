@@ -1,13 +1,13 @@
-# Interpretable NLP
-*Last update: 01/30/2020*
+# A note on NLP interpretability.
+*Last update: 01/31/2020*
 
-This [repo](https://github.com/printfoo/interpretable-nlp) contains a list of NLP and ML papers on interpretability, explainability, rationalization, etc., and my notes.
+This note goes through some recent papers on NLP interpretability.
 
 ## 0. Normative questions.
 
-What is interpretability?
+What is interpretability, and why do we want it?
 
-[The Mythos of Model Interpretability](http://www.zacklipton.com/media/papers/mythos_model_interpretability_lipton2016.pdf)
+[The Mythos of Model Interpretability](http://www.zacklipton.com/media/papers/mythos_model_interpretability_lipton2016.pdf) (Zachary C. Lipton, 2016) offered a taxonomy to understand interpretability.
 
 [Towards a Rigorous Science of Interpretable Machine Learning](https://arxiv.org/pdf/1702.08608.pdf)
 
