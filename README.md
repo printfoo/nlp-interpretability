@@ -10,24 +10,21 @@ What is interpretability?
 [The Mythos of Model Interpretability](http://www.zacklipton.com/media/papers/mythos_model_interpretability_lipton2016.pdf) (Zachary C. Lipton, 2016) offered a taxonomy for this question. It started by introducing some potential benefits of interpretability such as increasing trust and enabling fair and ethical decision-making. Then, it divides the properties of interpretable models into two categories.
 
 ***Transparency***, or *how does the model work*, the opposite of *opacity* or *black-box-ness*, is the 1st category. It can be considered at three levels:
-- At the level of the entire model, *simulatability*
-- At the level of individual components, *decomposability*, or *intelligibility*
-- At the level of the training algorithm, *algorithmic transparency*
+- At the level of the entire model, *simulatability* asks the model as a whole to be understandable by a person at once, e.g., very simple linear models or decision trees. 
+- At the level of individual components, *decomposability*, or *intelligibility* asks each part of the model admits an intuitive explanation, e.g., parameters of a linear model represents associations.
+- At the level of the training algorithm, *algorithmic transparency* asks for understanding the learning process itself, e.g., provable convergence of linear models.
 
-*(post-hoc) **Explanation***, or *what else can the model tell me*, is the 2nd category. It asks for useful information without peeking beneath the interworking of the model. Some common approaches to post-hoc explanation include:
-- *Text explanation* These explanations sometimes called ***rationales*** in NLP research.
-- *Visualization*
-- *Local explanation*
-- *Explanation by example*
+*(post-hoc) **Explainability***, or *what else can the model tell me*, is the 2nd category. It asks for useful information without peeking beneath the interworking of the model. Some common approaches to post-hoc explanation include:
+- *Text explanation*. Just as humans often justify decisions verbally, a model can output text descriptions along with its predictions. These explanations are sometimes called ***rationales*** in NLP research.
+- *Visualization* can be rendered to qualititvely demonstrate what a has learned.
+- *Local explanation* is focus on what a model depends on locally, e.g., saliency map shows what a model is *focusing on*. 
+- *Explanation by example*. Just as humans often justify decisions by analogy, a model can list several examples that are considered similar to the input, e.g., neighbors of word2vec.
 
-***Linear models* are not strictly more interpretable than neural networks**
-
-***Humans* are not strictly more interpretable than neural networks**, either.
-
+Under these properties, the authors note that *linear models are not strictly more interpretable than neural networks*, e.g., deep decision trees lose simulatability, linear models with ill-curated features lose decomposability. In addition, *humans are not strictly more interpretable than neural networks*, either, as human exhibit none of the transparency properties.
 
 [Towards a Rigorous Science of Interpretable Machine Learning](https://arxiv.org/pdf/1702.08608.pdf)
 
-## 1. Models with built-in interpretability.
+## 1. Models with (some) built-in explainability.
 
 ### 1.1. Attention mechanism.
 
@@ -43,6 +40,6 @@ What is interpretability?
 
 [Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf)
 
-## 2. Rationale-supervised learning.
+## 2. Models surpervised by rationales for explainability.
 
 [ERASER: A Benchmark to Evaluate Rationalized NLP Models](https://arxiv.org/abs/1911.03429)
