@@ -7,9 +7,9 @@ This note briefly goes through some recent papers on NLP interpretability.
 
 What is interpretability?
 
-[The Mythos of Model Interpretability](http://www.zacklipton.com/media/papers/mythos_model_interpretability_lipton2016.pdf) (Zachary C. Lipton, 2016) divided the properties of interpretable models into two categories.
+[The Mythos of Model Interpretability](http://www.zacklipton.com/media/papers/mythos_model_interpretability_lipton2016.pdf) (Lipton, 2016) divided the properties of interpretable models into two categories.
 
-***Transparency***, or *how does the model work*, the opposite of *opacity* or *black-box-ness*, is the 1st category. It can be considered at three levels:
+***Transparency***, or *how does the model work*, the opposite of *opacity* or *blackboxness*, is the 1st category. It can be considered at three levels:
 - At the level of the entire model, *simulatability* asks the model as a whole to be understandable by a person at once, e.g., very simple linear models or decision trees. 
 - At the level of individual components, *decomposability* or *intelligibility* asks each part of the model admits an intuitive explanation, e.g., parameters of a linear model represent associations between each feature and the label.
 - At the level of the training algorithm, *algorithmic transparency* asks for understanding the learning process itself, e.g., provable convergence of linear models.
@@ -22,7 +22,11 @@ What is interpretability?
 
 Under these properties, the authors note that *linear models are not strictly more interpretable than neural networks*, e.g., linear models with high dimensional features lose simulatability, with ill-curated features lose decomposability. Also, *humans are not strictly more interpretable than neural networks*, either, as humans exhibit none of the transparency properties.
 
-[Towards a Rigorous Science of Interpretable Machine Learning](https://arxiv.org/pdf/1702.08608.pdf)
+[Towards a Rigorous Science of Interpretable Machine Learning](https://arxiv.org/pdf/1702.08608.pdf) (Doshi-Velez and Kim, 2017) discussed a taxonomy to evaluate interpretability, which includes:
+
+- Application-grounded evaluation, which involves domain experts to evaluate real applications.
+- Human-grounded evaluation, which involves lay humans to evaluate simplified tasks.
+- Functionally-grounded evaluation, which involves no humans and uses some proxy to measure interpretability.
 
 ## 1. Models with (some) built-in explainability.
 
