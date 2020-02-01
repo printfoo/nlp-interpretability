@@ -16,11 +16,11 @@ What is interpretability?
 
 ***Explainability** (post-hoc)*, or *what else can the model tell me*, is the 2nd category. It asks for useful information without peeking under the interworking of the model. Some common approaches include:
 - *Text explanation*. Just as humans often justify decisions verbally, a model can output text descriptions along with its predictions. These explanations are sometimes called ***rationales*** in NLP research.
-- *Visualization* can be rendered to qualititvely demonstrate what a model has learned.
-- *Local explanation* is focus on what a model depends on locally, e.g., a saliency map shows what a model is *focusing on*. 
+- *Visualization* can be rendered to qualitatively demonstrate what a model has learned.
+- *Local explanation* is focused on what a model depends on locally, e.g., a saliency map shows what a model is *focusing on*. 
 - *Explanation by example*. Humans can also justify decisions by analogy, therefore a model can list several examples that are considered similar to the input, e.g., neighbors of word2vec representations.
 
-Under these properties, the authors note that *linear models are not strictly more interpretable than neural networks*, e.g., linear models with high dimensional features lose simulatability, with ill-curated features lose decomposability. In addition, *humans are not strictly more interpretable than neural networks*, either, as human exhibit none of the transparency properties.
+Under these properties, the authors note that *linear models are not strictly more interpretable than neural networks*, e.g., linear models with high dimensional features lose simulatability, with ill-curated features lose decomposability. Also, *humans are not strictly more interpretable than neural networks*, either, as humans exhibit none of the transparency properties.
 
 [Towards a Rigorous Science of Interpretable Machine Learning](https://arxiv.org/pdf/1702.08608.pdf)
 
