@@ -19,6 +19,7 @@ What is interpretability?
 - *Visualization* can be rendered to qualitatively demonstrate what a model has learned.
 - *Local explanation* is focused on what a model depends on locally, e.g., a saliency map shows what a model is *focusing on*. 
 - *Explanation by example*. Humans can also justify decisions by analogy, therefore a model can list several examples that are considered similar to the input, e.g., neighbors of word2vec representations.
+
 (\* This is called *post-hoc interpretability* in the original paper, but more recent work roughly use the term explainability for this categories.)
 
 Note that this division is not absolute, and some properties of interpretability fall in between a mixture of both.
@@ -39,7 +40,7 @@ NLP models that output rationales without learning rationales.
 
 ### 1.2. *Hard* rationale selection with *generator*.
 
-*Generator* is a neural module designed to extract phrases from input sequence as rationales.
+*Generator* is a neural module designed to extract phrases from input sequences as rationales.
 
 [Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf) (Lei et al., 2016)
 
@@ -51,16 +52,16 @@ NLP models that output rationales without learning rationales.
 
 ### 1.1. *Soft* rationale selection with *attention*.
 
-*Attention* is a neural mechanism designed to weigh input sequence for downstream modules. The attention weights can be viewed as rationales.
+*Attention* is a neural mechanism designed to weigh input sequences for downstream modules. The attention weights can be viewed as rationales.
 
 [Attention is not Explanation](https://arxiv.org/pdf/1902.10186.pdf) (Jain and Wallace, 2019) showed that attention does not provide *faithful* explanations, the following two senses:
 
 - Attention weights are only weakly correlated with measures of feature importance.
 - Alternative (adversarially generated) attention weights can yield the same prediction.
 
-[Attention is not not Explanation](https://arxiv.org/pdf/1908.04626.pdf) (Wiegreffe and Pinter, 2019) continues (Jain and Wallace, 2019), and show that although attention explanation may not be *faithful*, but they are *plausible*.
+[Attention is not not Explanation](https://arxiv.org/pdf/1908.04626.pdf) (Wiegreffe and Pinter, 2019) continues (Jain and Wallace, 2019), and show that although attention explanation may not be *faithful*, they are *plausible*.
 
-[Attention Interpretability across NLP Tasks](https://arxiv.org/pdf/1909.11218.pdf) (Vashishth et al., 2019) evaluated attention as explanation on diverse NLP tasks, and shows that attention weights correlate with measures of feature importance for pair sequence tasks (e.g., question answering), but not for single sequence tasks (e.g., sequence classification).
+[Attention Interpretability across NLP Tasks](https://arxiv.org/pdf/1909.11218.pdf) (Vashishth et al., 2019) evaluated attention as explanations on diverse NLP tasks, and shows that attention weights correlate with measures of feature importance for pair sequence tasks (e.g., question answering), but not for single sequence tasks (e.g., sequence classification).
 
 ## 2. Models surpervised by rationales for explainability.
 
