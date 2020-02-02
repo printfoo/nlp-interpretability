@@ -32,7 +32,7 @@ Under these properties, the authors note that *linear models are not strictly mo
 - Human-grounded evaluation, which involves lay humans to evaluate simplified tasks.
 - Functionally-grounded evaluation, which involves no humans and uses some proxy to measure interpretability.
 
-## 1. Models with (some) built-in explainability.
+## 1. Models with (some) intrinsic explainability.
 
 NLP models that output rationales without learning rationales.
 
