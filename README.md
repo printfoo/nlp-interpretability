@@ -20,7 +20,7 @@ What is interpretability?
 - *Local explanation* is focused on what a model depends on locally, e.g., a saliency map shows what a model is *focusing on*. 
 - *Explanation by example*. Humans can also justify decisions by analogy, therefore a model can list several examples that are considered similar to the input, e.g., neighbors of word2vec representations.
 
-(\* This is called *post-hoc interpretability* in the original paper, but more recent work roughly use the term explainability for this categories.)
+(\* Called *post-hoc interpretability* in the original paper, but recent work roughly use the term explainability for this category.)
 
 Note that this division is not absolute, and some properties of interpretability fall in between a mixture of both.
 
@@ -62,6 +62,12 @@ NLP models that output rationales without learning rationales.
 [Attention is not not Explanation](https://arxiv.org/pdf/1908.04626.pdf) (Wiegreffe and Pinter, 2019) continues (Jain and Wallace, 2019), and show that although attention explanation may not be *faithful*, they are *plausible*.
 
 [Attention Interpretability across NLP Tasks](https://arxiv.org/pdf/1909.11218.pdf) (Vashishth et al., 2019) evaluated attention as explanations on diverse NLP tasks, and shows that attention weights correlate with measures of feature importance for pair sequence tasks (e.g., question answering), but not for single sequence tasks (e.g., sequence classification).
+
+[Learning to Explain: An Information-Theoretic Perspective on Model Interpretation](https://arxiv.org/pdf/1802.07814.pdf) (Chen et al., 2018a) designed the generator\* to maximize the mutual information between selected features and the label.
+
+\* Called *feature selector* in the original paper.
+
+[L-Shapley and C-Shapley: Efficient Model Interpretation for Structured Data](https://arxiv.org/pdf/1808.02610.pdf) (Chen et al., 2018b) adoped Shapley value e from cooperative game theory as a fair scorer.
 
 ## 2. Models surpervised by rationales for explainability.
 
