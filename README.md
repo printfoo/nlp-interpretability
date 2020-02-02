@@ -1,5 +1,5 @@
 # A note on NLP interpretability.
-*by [Shan Jiang](https://shanjiang.me) on 02/01/2020*
+*by [Shan Jiang](https://shanjiang.me) on 02/02/2020*
 
 This note briefly goes through some recent papers on NLP interpretability.
 
@@ -7,18 +7,19 @@ This note briefly goes through some recent papers on NLP interpretability.
 
 What is interpretability?
 
-[The Mythos of Model Interpretability](https://arxiv.org/pdf/1606.03490.pdf) (Lipton, 2016) divided the properties of interpretable models into two categories (some notes are my own based on more recent work).
+[The Mythos of Model Interpretability](https://arxiv.org/pdf/1606.03490.pdf) (Lipton, 2016) divided the properties of interpretable models into two categories.
 
 ***Transparency***, or *how does the model work*, the opposite of *opacity* or *blackboxness*, is the 1st category. It can be considered at three levels:
 - At the level of the entire model, *simulatability* asks the model as a whole to be understandable by a person at once, e.g., very simple linear models or decision trees. 
 - At the level of individual components, *decomposability* or *intelligibility* asks each part of the model admits an intuitive explanation, e.g., parameters of a linear model represent associations between each feature and the label.
 - At the level of the training algorithm, *algorithmic transparency* asks for understanding the learning process itself, e.g., provable convergence of linear models.
 
-***Explainability** (built-in or post-hoc)*, or *what else can the model tell me*, is the 2nd category. It asks for useful information without peeking under the interworking of the model. Some common approaches include:
+***Explainability** (built-in or post-hoc)*\*, or *what else can the model tell me*, is the 2nd category. It asks for useful information without peeking under the interworking of the model. Some common approaches include:
 - *Text explanation*. Just as humans often justify decisions verbally, a model can output text descriptions along with its predictions. These explanations are sometimes called ***rationales*** in NLP research.
 - *Visualization* can be rendered to qualitatively demonstrate what a model has learned.
 - *Local explanation* is focused on what a model depends on locally, e.g., a saliency map shows what a model is *focusing on*. 
 - *Explanation by example*. Humans can also justify decisions by analogy, therefore a model can list several examples that are considered similar to the input, e.g., neighbors of word2vec representations.
+(\* This is called *post-hoc interpretability* in the original paper, but more recent work roughly use the term explainability for this categories.)
 
 Note that this division is not absolute, and some properties of interpretability fall in between a mixture of both.
 
@@ -38,6 +39,8 @@ NLP models that output rationales without learning rationales.
 
 ### 1.2. *Hard* rationale selection with *generator*.
 
+*Generator* is a neural module designed to extract phrases from input sequence as rationales.
+
 [Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf) (Lei et al., 2016)
 
 [Rethinking Cooperative Rationalization: Introspective Extraction and Complement Control](https://arxiv.org/pdf/1910.13294.pdf) (Yu et al., 2019)
@@ -48,13 +51,16 @@ NLP models that output rationales without learning rationales.
 
 ### 1.1. *Soft* rationale selection with *attention*.
 
-[Attention is not Explanation](https://arxiv.org/pdf/1902.10186.pdf) (Jain and Wallace, 2019)
+*Attention* is a neural mechanism designed to weigh input sequence for downstream modules. The attention weights can be viewed as rationales.
 
-[Attention is not not Explanation](https://arxiv.org/pdf/1908.04626.pdf) (Wiegreffe and Pinter, 2019)
+[Attention is not Explanation](https://arxiv.org/pdf/1902.10186.pdf) (Jain and Wallace, 2019) showed that attention does not provide *faithful* explanations, the following two senses:
 
-[Is Attention Interpretable?](https://arxiv.org/pdf/1906.03731.pdf) (Serrano and Smith, 2019)
+- Attention weights are only weakly correlated with measures of feature importance.
+- Alternative (adversarially generated) attention weights can yield the same prediction.
 
-[Attention Interpretability across NLP Tasks](https://arxiv.org/pdf/1909.11218.pdf) (Vashishth et al., 2019)
+[Attention is not not Explanation](https://arxiv.org/pdf/1908.04626.pdf) (Wiegreffe and Pinter, 2019) continues (Jain and Wallace, 2019), and show that although attention explanation may not be *faithful*, but they are *plausible*.
+
+[Attention Interpretability across NLP Tasks](https://arxiv.org/pdf/1909.11218.pdf) (Vashishth et al., 2019) evaluated attention as explanation on diverse NLP tasks, and shows that attention weights correlate with measures of feature importance for pair sequence tasks (e.g., question answering), but not for single sequence tasks (e.g., sequence classification).
 
 ## 2. Models surpervised by rationales for explainability.
 
