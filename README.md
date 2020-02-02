@@ -1,5 +1,5 @@
 # A note on NLP interpretability.
-*by [Shan Jiang](https://shanjiang.me) on 01/31/2020*
+*by [Shan Jiang](https://shanjiang.me) on 02/01/2020*
 
 This note briefly goes through some recent papers on NLP interpretability.
 
@@ -20,11 +20,11 @@ What is interpretability?
 - *Local explanation* is focused on what a model depends on locally, e.g., a saliency map shows what a model is *focusing on*. 
 - *Explanation by example*. Humans can also justify decisions by analogy, therefore a model can list several examples that are considered similar to the input, e.g., neighbors of word2vec representations.
 
-Note that this division is not absolute, and some properties of interpretability fall inbetween a mixture of both.
+Note that this division is not absolute, and some properties of interpretability fall in between a mixture of both.
 
 Under these properties, the authors note that *linear models are not strictly more interpretable than neural networks*, e.g., linear models with high dimensional features lose simulatability, with ill-curated features lose decomposability. Also, *humans are not strictly more interpretable than neural networks*, either, as humans exhibit none of the transparency properties.
 
-**The rest of the reading list contains technical papers focused on *explainability***. *Transparency* often requires specialized architechtural choice of neural networks, e.g., , that do not yet reach accuracies comparable to blackbox approach, while *explainability* can be achieved by imposing constraints on exisiting neural network architechtures.
+**The rest of the reading list contains technical papers focused on *explainability***. *Transparency* often requires a specialized architectural choice of neural networks, e.g., module networks, that do not yet reach accuracies comparable to blackbox approaches, while *explainability* can be achieved by imposing constraints on existing neural network architectures.
 
 [Towards a Rigorous Science of Interpretable Machine Learning](https://arxiv.org/pdf/1702.08608.pdf) (Doshi-Velez and Kim, 2017) discussed a taxonomy to evaluate interpretability, which includes:
 
@@ -42,7 +42,7 @@ NLP models that output rationales without learning rationales.
 
 [Rethinking Cooperative Rationalization: Introspective Extraction and Complement Control](https://arxiv.org/pdf/1910.13294.pdf) (Yu et al., 2019)
 
-[A Game Theoretic Approach to Class-wise Selective Rationalization](https://arxiv.org/pdf/1910.12853.pdf) (Chang et al., 2019) future extended (Yu et al., 2019) to output both justifying and contering rationales for the prediction.
+[A Game Theoretic Approach to Class-wise Selective Rationalization](https://arxiv.org/pdf/1910.12853.pdf) (Chang et al., 2019) future extended (Yu et al., 2019) to output both justifying and countering rationales for the prediction.
 
 [Extractive Adversarial Networks: High-Recall Explanations for Identifying Personal Attacks in Social Media Posts](https://www.aclweb.org/anthology/D18-1386.pdf) (Carton et al., 2018) used a similar approach compared to (Yu et al., 2019), but for an application of detecting personal attacks.
 
