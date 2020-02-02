@@ -50,6 +50,12 @@ NLP models that output rationales without learning rationales.
 
 [Extractive Adversarial Networks: High-Recall Explanations for Identifying Personal Attacks in Social Media Posts](https://www.aclweb.org/anthology/D18-1386.pdf) (Carton et al., 2018) used a similar approach compared to (Yu et al., 2019), but for an application of detecting personal attacks.
 
+[Learning to Explain: An Information-Theoretic Perspective on Model Interpretation](https://arxiv.org/pdf/1802.07814.pdf) (Chen et al., 2018a) designed the generator\* to maximize the mutual information between selected features and the label.
+
+\* Called *feature selector* in the original paper.
+
+[L-Shapley and C-Shapley: Efficient Model Interpretation for Structured Data](https://arxiv.org/pdf/1808.02610.pdf) (Chen et al., 2018b) adoped Shapley value e from cooperative game theory as a fair scorer.
+
 ### 1.1. *Soft* rationale selection with *attention*.
 
 *Attention* is a neural mechanism designed to weigh input sequences for downstream modules. The attention weights can be viewed as rationales.
@@ -62,12 +68,6 @@ NLP models that output rationales without learning rationales.
 [Attention is not not Explanation](https://arxiv.org/pdf/1908.04626.pdf) (Wiegreffe and Pinter, 2019) continues (Jain and Wallace, 2019), and show that although attention explanation may not be *faithful*, they are *plausible*.
 
 [Attention Interpretability across NLP Tasks](https://arxiv.org/pdf/1909.11218.pdf) (Vashishth et al., 2019) evaluated attention as explanations on diverse NLP tasks, and shows that attention weights correlate with measures of feature importance for pair sequence tasks (e.g., question answering), but not for single sequence tasks (e.g., sequence classification).
-
-[Learning to Explain: An Information-Theoretic Perspective on Model Interpretation](https://arxiv.org/pdf/1802.07814.pdf) (Chen et al., 2018a) designed the generator\* to maximize the mutual information between selected features and the label.
-
-\* Called *feature selector* in the original paper.
-
-[L-Shapley and C-Shapley: Efficient Model Interpretation for Structured Data](https://arxiv.org/pdf/1808.02610.pdf) (Chen et al., 2018b) adoped Shapley value e from cooperative game theory as a fair scorer.
 
 ## 2. Models surpervised by rationales for explainability.
 
