@@ -1,5 +1,5 @@
 # A note on NLP interpretability.
-*by [Shan Jiang](https://shanjiang.me) on 02/02/2020*
+*by [Shan Jiang](https://shanjiang.me), on 02/03/2020, available on [GitHub](https://github.com/printfoo/nlp-interpretability)* 
 
 This note briefly goes through some recent papers on NLP interpretability.
 
