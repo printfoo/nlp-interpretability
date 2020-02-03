@@ -48,7 +48,7 @@ Given a sequence input ***x*** and its label *y*, the generator's job is to lear
 
 - Selected rationales should be *sufficient* to make a prediction, i.e., some distance measure between conpred(·) and ground-truth *y*.
 - Selected rationales should be *short*, i.e., some penalty on the norm of ***z***.
-- Selected rationales should be *consecutive*, i.e., some penalty on the number of unselected neighbors of ***z***.
+- Selected rationales should be *consecutive*, i.e., some penalty on the number of neighbors in ***z*** with opposite masks.
 
 The *generator*-*predictor*\* framework is evaluated with the soft attention machanism and showed improved performance.
 
