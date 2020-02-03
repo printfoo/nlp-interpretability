@@ -20,7 +20,7 @@ What is interpretability?
 - *Local explanation* is focused on what a model depends on locally, e.g., a saliency map shows what a model is *focusing on*. 
 - *Explanation by example*. Humans can also justify decisions by analogy, therefore a model can list several examples that are considered similar to the input, e.g., neighbors of word2vec representations.
 
-(\* Called *post-hoc interpretability* in the original paper, but recent work roughly use the term explainability for this category.)
+(\* Called *post-hoc interpretability* in the original paper, but recent work roughly uses the term *explainability* for this category.)
 
 Note that this division is not absolute, and some properties of interpretability fall in between a mixture of both.
 
@@ -42,7 +42,11 @@ NLP models that output rationales without learning rationales.
 
 *Generator* is a neural module designed to extract phrases from input sequences as rationales.
 
-[Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf) (Lei et al., 2016)
+[Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf) (Lei et al., 2016) proposed the *generator*-*predictor*\* framework. The generator specifies a dsitribution over the text fragments as candidates rationals and these are passed through the predictor for prediction. Rationales are not provided during training, but are learned by including desiderata for rationales (i.e., short phrases with consecutive words) to the loss function.
+
+Specifically, given a sequence input $$\mathbf{x}=\{ x_t \} ^l _{t=1}$$ and its label $$y \in [0, 1]^m$$, a $$m$$-dimensional vector.
+
+\* Called *encoder* in the original paper, but recent work uses the term *predictor* to not confuse with the *encoder*-*decoder* framework.
 
 [Rethinking Cooperative Rationalization: Introspective Extraction and Complement Control](https://arxiv.org/pdf/1910.13294.pdf) (Yu et al., 2019)
 
