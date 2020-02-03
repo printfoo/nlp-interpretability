@@ -44,7 +44,7 @@ NLP models that output rationales without learning rationales.
 
 [Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf) (Lei et al., 2016) proposed the *generator*-*predictor*\* framework. The generator specifies a dsitribution over the text fragments as candidates rationals and these are passed through the predictor for prediction. Rationales are not provided during training, but are learned by including desiderata for rationales (i.e., short phrases with consecutive words) to the loss function.
 
-Specifically, given a sequence input $$\mathbf{x}=\{ x_t \} ^l _{t=1}$$ and its label $$y \in [0, 1]^m$$, a $$m$$-dimensional vector.
+Specifically, given a sequence input ***x*** and its label *y*, the generator's job is to learn a mask ***z***=gen(***x***) where each element in ***z*** is a binary mask denoting if the corresponding rationale in ***x*** is selected. The predictor's job is then to take the selected rationles and make a prediction ***y***=pred(gen(***x***)⊙***x***). 
 
 \* Called *encoder* in the original paper, but recent work uses the term *predictor* to not confuse with the *encoder*-*decoder* framework.
 
