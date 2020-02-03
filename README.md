@@ -40,7 +40,7 @@ NLP models that output rationales without learning rationales.
 
 ### 1.2. *Hard* rationale selection with *generator*.
 
-*Generator* is a neural module designed to extract phrases from input sequences as rationales.
+*Generator* is a neural module designed to extract phrases from input sequences as rationales. It is called *hard* because the following neural module will *only* use the rationales selected by the generator.
 
 [Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf) (Lei et al., 2016) proposed the *generator*-*predictor*\* framework. The generator specifies a dsitribution over the text fragments as candidates rationals and these are passed through the predictor for prediction. Rationales are not provided during training, but are learned by including desiderata for rationales (i.e., short phrases with consecutive words) to the loss function.
 
@@ -74,7 +74,7 @@ Interestingly, this paper introduced a human evaluation method for selected rati
 
 ### 1.1. *Soft* rationale selection with *attention*.
 
-*Attention* is a neural mechanism designed to weigh input sequences for downstream modules. The attention weights can be viewed as rationales.
+*Attention* is a neural mechanism designed to weigh input sequences for downstream modulesm and attention weights can be viewed as rationales. It is called *soft* because the following neural module will *both* use the attention and the representation of the whole input.
 
 [Attention is not Explanation](https://arxiv.org/pdf/1902.10186.pdf) (Jain and Wallace, 2019) showed that attention does not provide *faithful* explanations, the following two senses:
 
