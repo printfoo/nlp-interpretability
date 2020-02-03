@@ -40,27 +40,29 @@ NLP models that output rationales without learning rationales.
 
 ### 1.2. *Hard* rationale selection with *generator*.
 
-*Generator* is a neural module designed to extract phrases from input sequences as rationales. It is called *hard* because the following neural module will *only* use the rationales selected by the generator.
+*Generator* is a neural module designed to extract phrases from input sequences as rationales. It is called *hard* because the downstream neural module will *only* use the rationales selected by the generator.
 
-[Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf) (Lei et al., 2016) proposed the *generator*-*predictor*\* framework. The generator specifies a dsitribution over the text fragments as candidates rationals and these are passed through the predictor for prediction. Rationales are not provided during training, but are learned by including desiderata for rationales (i.e., short phrases with consecutive words) to the loss function.
+[Rationalizing Neural Predictions](https://arxiv.org/pdf/1606.04155.pdf) (Lei et al., 2016) proposed the *generator*-*predictor*\* framework. The generator specifies a distribution over the text fragments as candidates rationals and these are passed through the predictor for prediction. Rationales are not provided during training, but are learned by including desiderata for rationales (i.e., short phrases with consecutive words) to the loss function.
 
-Given a sequence input ***x*** and its label *y*, the generator's job is to learn a mask ***z***=gen(***x***) where each element in ***z*** is a binary mask denoting if the corresponding feature of ***x*** is selected. The predictor's job is then to take the selected rationales and make a prediction *y*=pred(gen(***x***)⊙***x***). The generator and predictor have a joint objective so that they can be trained in a end-to-end fashion. The loss function contains three parts:
+Given a sequence input ***x*** and its label *y*, the generator's job is to learn a mask ***z***=gen(***x***) where each element in ***z*** is a binary mask denoting if the corresponding feature of ***x*** is selected. The predictor's job is then to take the selected rationales and make a prediction *y*=pred(gen(***x***)⊙***x***). The generator and predictor have a joint objective so that they can be trained in an end-to-end fashion. The loss function contains three parts:
 
 - Selected rationales should be *sufficient* to make a prediction, i.e., some distance measure between conpred(·) and ground-truth *y*.
 - Selected rationales should be *short*, i.e., some penalty on the norm of ***z***.
 - Selected rationales should be *consecutive*, i.e., some penalty on the number of neighbors in ***z*** with opposite masks.
 
-The *generator*-*predictor*\* framework is evaluated with the soft attention machanism and showed improved performance.
+The *generator*-*predictor*\* framework is evaluated with the soft attention mechanism and showed improved performance.
 
 \* Called *encoder* in the original paper, but recent work uses the term *predictor* to not confuse with the *encoder*-*decoder* framework.
 
-[Rethinking Cooperative Rationalization: Introspective Extraction and Complement Control](https://arxiv.org/pdf/1910.13294.pdf) (Yu et al., 2019) extended (Lei et al., 2016) by introducing an *adversarial* player, the *complement predictor*, whose job is to take the *unselected* rationales and make a prediction *y*=conpred((1-gen(***x***))⊙***x***), which should be insufficient if all rationales are selected. This is realized by introducing another item in the loss function:
+[Rethinking Cooperative Rationalization: Introspective Extraction and Complement Control](https://arxiv.org/pdf/1910.13294.pdf) (Yu et al., 2019) extended (Lei et al., 2016) by introducing an *adversarial* player, the *anti-predictor*\*, whose job is to take the *unselected* rationales and make a prediction *y*=antipred((1-gen(***x***))⊙***x***), which should be insufficient if all rationales are selected. This is realized by introducing another item in the loss function:
 
-- Unselected rationales should be *insufficient* to make a prediction, i.e., some distance measure between conpred(·) and ground-truth *y*.
+- Unselected rationales should be *insufficient* to make a prediction, i.e., some distance measure between antipred(·) and ground-truth *y*.
 
-There are some additional machansim introduced in the paper, such as an *introspective* generator.
+There are some additional mechanisms introduced in the paper, such as an *introspective* generator.
 
 Interestingly, this paper introduced a human evaluation method for selected rationales: human annotators are asked to give a label for the input with the rationales masked out, and intuitively, a good model should decrease the accuracy of human annotators.
+
+\* Called *complement predictor* in the original paper.
 
 [A Game Theoretic Approach to Class-wise Selective Rationalization](https://arxiv.org/pdf/1910.12853.pdf) (Chang et al., 2019) future extended (Yu et al., 2019) to output both justifying and countering rationales for the prediction.
 
@@ -70,11 +72,11 @@ Interestingly, this paper introduced a human evaluation method for selected rati
 
 \* Called *feature selector* in the original paper.
 
-[L-Shapley and C-Shapley: Efficient Model Interpretation for Structured Data](https://arxiv.org/pdf/1808.02610.pdf) (Chen et al., 2018b) adoped Shapley value e from cooperative game theory as a fair scorer.
+[L-Shapley and C-Shapley: Efficient Model Interpretation for Structured Data](https://arxiv.org/pdf/1808.02610.pdf) (Chen et al., 2018b) adopted Shapley value e from cooperative game theory as a fair scorer.
 
 ### 1.1. *Soft* rationale selection with *attention*.
 
-*Attention* is a neural mechanism designed to weigh input sequences for downstream modulesm and attention weights can be viewed as rationales. It is called *soft* because the following neural module will *both* use the attention and the representation of the whole input.
+*Attention* is a neural mechanism designed to weigh input sequences for downstream modules, and attention weights can be viewed as rationales. It is called *soft* because the downstream neural module will *both* use the attention and the representation of the whole input.
 
 [Attention is not Explanation](https://arxiv.org/pdf/1902.10186.pdf) (Jain and Wallace, 2019) showed that attention does not provide *faithful* explanations, the following two senses:
 
@@ -85,7 +87,7 @@ Interestingly, this paper introduced a human evaluation method for selected rati
 
 [Attention Interpretability across NLP Tasks](https://arxiv.org/pdf/1909.11218.pdf) (Vashishth et al., 2019) evaluated attention as explanations on diverse NLP tasks, and shows that attention weights correlate with measures of feature importance for pair sequence tasks (e.g., question answering), but not for single sequence tasks (e.g., sequence classification).
 
-## 2. Models surpervised by rationales for explainability.
+## 2. Models supervised by rationales for explainability.
 
 NLP models that output rationales while incorporating rationales in the learning process.
 
